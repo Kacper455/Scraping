@@ -26,8 +26,7 @@
   <img width="12" />
   <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/selenium/selenium-original.svg" height="40" alt="python logo"  />
   <img width="12" />
-  <img src="" height="40" alt="python logo"  />
-  <img width="12" />
+
 
 </div>
 
