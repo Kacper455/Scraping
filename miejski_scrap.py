@@ -66,7 +66,7 @@ for idx, addresses in enumerate(urls, start=1):
             result.append(inr)
 
         r = len(result)
-    #print(header)
+    
 if (ll == r):
     data = {
     'Nazwa': listed,
@@ -105,3 +105,4 @@ with pd.ExcelWriter(
 
 
 input("Press enter to continue...")
+
