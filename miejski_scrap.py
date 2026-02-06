@@ -6,14 +6,6 @@ from pathlib import Path
 from openpyxl.reader.excel import load_workbook
 import time
 
-def getHTML(url):
-    r = requests.get(url)
-    r.raise_for_status()
-    return r.content
-
-url_to_scape = 'https://www.miejski.pl/a-3.html'
-html = getHTML(url_to_scape)
-
 urel = 'https://www.miejski.pl/e-'
 
 urls = []
@@ -58,7 +50,6 @@ for idx, addresses in enumerate(urls, start=1):
         page = requests.get(address).content
         soup = bs(page, 'html.parser')
 
-        #for b in soup.find_all('div', attrs={'id': "content"}):
         for a in soup.find_all('main'):
             for art in a.find_all('article'):
                 for head in art.find_all("header"):
@@ -111,5 +102,6 @@ with pd.ExcelWriter(
         header=False,
         startrow=start_row
     )
+
 
 input("Press enter to continue...")
