@@ -1,33 +1,4 @@
-# Intro
-<h1 align="left">Hey 👋 What's up?</h1>
 
-###
+# Miejski Scraping
 
-<p align="left">My name is Kacper and I'm a Software Engineer, from Poland</p>
-
-###
-
-<h2 align="left">About me</h2>
-
-###
-
-<p align="left">✨ Creating bugs since 2023<br>📚 I'm currently learning web scraping<br>🎯 Goals: Make effective applicaitons <br>🎲 Fun fact: I hated coding at first</p>
-
-###
-
-<h2 align="left">I code with</h2>
-
-###
-
-<div align="left">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/pandas/pandas-plain-wordmark.svg" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/python/python-original-wordmark.svg" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/selenium/selenium-original.svg" height="40" alt="python logo"  />
-  <img width="12" />
-
-
-</div>
-
-###
+This script is for extracting all publications from specific letter you choose and place them in a .xlsx file. In file there will be two columns with all definitions sorted by rating in a descending mode
