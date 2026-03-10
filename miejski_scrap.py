@@ -1,11 +1,10 @@
 import requests
 from urllib.parse import urljoin
-from bs4 import BeautifulSoup as bs
+from bs4 import BeatifulSoup
 import pandas as pd
 from pathlib import Path
 from openpyxl.reader.excel import load_workbook
 import psutil
-import time
 
 def getHTML(url):
     r = requests.get(url)
