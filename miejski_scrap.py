@@ -5,7 +5,6 @@ import pandas as pd
 from pathlib import Path
 from openpyxl.reader.excel import load_workbook
 import psutil
-import time
 
 def getHTML(url):
     r = requests.get(url)
