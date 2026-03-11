@@ -1,6 +1,6 @@
 import requests
 from urllib.parse import urljoin
-from bs4 import BeatifulSoup
+from bs4 import BeatifulSoup as bs
 import pandas as pd
 from pathlib import Path
 from openpyxl.reader.excel import load_workbook
