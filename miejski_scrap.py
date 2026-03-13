@@ -1,6 +1,6 @@
 import requests
 from urllib.parse import urljoin
-from bs4 import BeatifulSoup as bs
+from bs4 import BeautifulSoup as bs
 import pandas as pd
 from pathlib import Path
 from openpyxl.reader.excel import load_workbook
@@ -59,9 +59,11 @@ for idx, addresses in enumerate(urls_to_scrap(), start=1):
         for a in soup.find_all('main'):
             for art in a.find_all('article'):
                 for head in art.find_all("header"):
-                    header = head.find_all(string=True)
+                    header = head.find_all()
+                    for heading in header:
+                        heading = heading.get_text(strip=True)
 
-        l = listed.append(header)
+        listed.append(heading)
         ll = len(listed)
 
         for x in soup.find_all('main'):
