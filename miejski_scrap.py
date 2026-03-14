@@ -61,19 +61,26 @@ for idx, addresses in enumerate(urls_to_scrap(), start=1):
                 for head in art.find_all("header"):
                     header = head.find_all()
                     for heading in header:
-                        heading = heading.get_text(strip=True)
+                        h = heading.get_text(strip=True)
 
-        listed.append(heading)
-        ll = len(listed)
-
-        for x in soup.find_all('main'):
-            title = x.find("div", class_="rating-box")
+            title = a.find("div", class_="rating-box")
             rate = title.find("span", class_="rating")
             rating = rate.text
             inr = int(rating)
             result.append(inr)
+            listed.append(h)
 
+        l = len(listed)
         r = len(result)
+
+        # for x in soup.find_all('main'):
+        #     title = x.find("div", class_="rating-box")
+        #     rate = title.find("span", class_="rating")
+        #     rating = rate.text
+        #     inr = int(rating)
+        #     result.append(inr)
+        #
+        # r = len(result)
 
     def create_data():
         try:
