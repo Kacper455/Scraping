@@ -94,13 +94,13 @@ for idx, addresses in enumerate(urls_to_scrap(), start=1):
             documents = Path.home() / "Documents"
             file_path = documents / "Wyniki_H.xlsx"
 
-            df_sorted.to_excel(file_path, index=False, startcol=2)
+            df_sorted.to_excel(file_path, index=False, startcol=0)
 
             if file_path.exists():
                 book = load_workbook(file_path)
                 start_row = book.active.max_row
             else:
-                start_row = 0
+                start_row = 3
             with pd.ExcelWriter(
                     file_path,
                     engine="openpyxl",
