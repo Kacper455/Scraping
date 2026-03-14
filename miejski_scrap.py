@@ -26,7 +26,7 @@ def urls_to_scrap():
 
 result = []
 listed = []
-adress = []
+dates = []
 
 for idx, addresses in enumerate(urls_to_scrap(), start=1):
     response = requests.get(addresses).content
@@ -67,29 +67,29 @@ for idx, addresses in enumerate(urls_to_scrap(), start=1):
             rate = title.find("span", class_="rating")
             rating = rate.text
             inr = int(rating)
+
+            date = a.find("div", class_="published-date")
+            for names in date:
+                n = names.get_text(strip=True).replace("Data dodania:", "")
+
+
+            dates.append(n)
             result.append(inr)
             listed.append(h)
 
+
         l = len(listed)
         r = len(result)
-
-        # for x in soup.find_all('main'):
-        #     title = x.find("div", class_="rating-box")
-        #     rate = title.find("span", class_="rating")
-        #     rating = rate.text
-        #     inr = int(rating)
-        #     result.append(inr)
-        #
-        # r = len(result)
 
     def create_data():
         try:
             data = {
             'Nazwa': listed,
             'Rating': result,
+            'Data dodania': dates,
             }
             df = pd.DataFrame(data)
-            df_sorted = df.sort_values(by=['Rating'], ascending=False)
+            df_sorted = df.sort_values(by=['Data dodania'], ascending=True)
 
             documents = Path.home() / "Documents"
             file_path = documents / "Wyniki_H.xlsx"
