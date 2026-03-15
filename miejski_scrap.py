@@ -89,7 +89,7 @@ for idx, addresses in enumerate(urls_to_scrap(), start=1):
             'Data dodania': dates,
             }
             df = pd.DataFrame(data)
-            df_sorted = df.sort_values(by=['Data dodania'], ascending=True)
+            df_sorted = df.sort_values(by=['Rating'], ascending=False)
 
             documents = Path.home() / "Documents"
             file_path = documents / "Wyniki_H.xlsx"
